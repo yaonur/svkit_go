@@ -6,6 +6,11 @@ declare global {
 		// interface Error {}
 		interface Locals {
 			data:{}
+			user:{
+				admin: boolean
+				id: number
+				name:string
+			} | null
 		}
 		// interface PageData {}
 		// interface Platform {}

@@ -1,11 +1,11 @@
-import type { LayoutLoad } from './$types'
+import type { PageLoad } from './$types'
 
-export const load: LayoutLoad = async (page) => {
-    console.log("page.ts load")
-    console.log(page)
-    console.log("------------------------------------")
+export const load: PageLoad = async ({data}) => {
+    // console.log("page.ts load")
+    // console.log(page)
+    // console.log("------------------------------------")
     return {
-        pageLocalPage:page,
+        ...data,
         pageLocal: "data from pageTs load"
     };
 }

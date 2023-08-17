@@ -7,4 +7,8 @@
 <svelte:head>
 	<link rel="icon" type="image/svg" href={Logo} />
 </svelte:head>
+<div class="bg-pink-200">
+	<a href="/" class="p-4">Home</a>
+	<a href="/protected" class="p-4">Protected</a>
+</div>
 <slot />
