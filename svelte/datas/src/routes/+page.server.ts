@@ -1,13 +1,13 @@
 import type { PageServerLoad,Actions } from './$types';
 import {redirect} from "@sveltejs/kit";
 
-export const load: PageServerLoad = async ({locals,cookies}) => {
+export const load: PageServerLoad = async (event) => {
     console.log("page.server.ts load req")
     // cookies.delete("user")
 
     // console.log(req.locals)
     // console.log("------------------------------------")
-    const {data,user}=locals
+    const {data,user}=event.locals
     return {
         ...data,user
 
