@@ -1,4 +1,18 @@
-<button class="text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800"> ... </button>
+<script>
+    import NavRightContainer from '$elements/NavRightContainer.svelte';
+    // import Home from '$icon/Home.svg?component'
+    import screenSize from '$lib/stores/screenSize';
+    import {TestCompCn} from '$ui/TestCompCn';
 
-<!-- After -->
-<button class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"> ... </button>
+
+    $: innerWidth = 0;
+    // $: ss=screenSize('sm')
+</script>
+
+<svelte:window bind:innerWidth/>
+
+<div class="mt-8">
+    <TestCompCn class="h-8 bg-primary" disabled="{true}"/>
+</div>
+
+
