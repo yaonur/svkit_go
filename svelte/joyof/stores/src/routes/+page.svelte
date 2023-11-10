@@ -1,16 +1,19 @@
 <script>
-    import NavRightContainer from '$elements/NavRightContainer.svelte';
-    import Home from '$icon/Home.svg?component'
-    import screenSize from '$lib/stores/screenSize';
-	import Uploader from '$lib/components/ui/Uploader/Uploader.svelte';
+   import {counter} from '$lib/stores/counter';
+	import Decrement from '$ui/Decrement';
+	import Increment from '$ui/Increment';
+	import Reset from '$ui/Reset';
+   let value=1
 
-	$: innerWidth = 0;
-	// $: ss=screenSize('sm')
+    counter.subscribe((value) => {
+        console.log(value);
+    });
 </script>
 
-<svelte:window bind:innerWidth />
 
 <div>
-    <p>Uploader</p>
-    <Uploader/>
+    <h1>The count is {counter}</h1>
+    <Increment />
+    <Decrement />
+    <Reset />
 </div>

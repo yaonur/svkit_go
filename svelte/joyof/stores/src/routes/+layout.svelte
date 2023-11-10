@@ -11,23 +11,10 @@
 
   
 	type SvgComponent= ComponentType<SvelteComponent<SVGAttributes<SVGSVGElement>>>
-	const defaultLocale = 'en'
-
-	register('en', () => import('$lib/i18n/lang/en.json'))
-	register('tr', () => import('$lib/i18n/lang/tr.json'))
-
-	init({
-		fallbackLocale: defaultLocale,
-		initialLocale: $page.params.lang || defaultLocale,
-	})
-	locale.set($page.params.lang || defaultLocale)
-	afterUpdate(()=>{
-		locale.set($page.params.lang || defaultLocale)
-	})
+	
 </script>
 
 <svelte:head>
 	<link rel="icon" type="image/svg" href={Logo} />
 </svelte:head>
-<Navbar  />
 <slot />
