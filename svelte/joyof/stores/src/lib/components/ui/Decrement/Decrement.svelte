@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {counter} from '$lib/stores/counter';
 	function decrement(){
-		counter.update((value)=>{
+		counter.update((value:any)=>{
 			return value-1;
 		})
 	}
