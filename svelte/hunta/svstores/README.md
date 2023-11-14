@@ -1,3 +1,5 @@
+# Lesson link
+[hunta - level up your svelte stores](https://www.youtube.com/watch?v=-vjNAyL2JCQ)
 # Template project for tailwind setup on sveltekit
 ```bash
 npx degit https://github.com/yaonur/sveltekit-tailwind
