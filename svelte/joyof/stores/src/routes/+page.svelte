@@ -3,16 +3,17 @@
 	import Decrement from '$ui/Decrement';
 	import Increment from '$ui/Increment';
 	import Reset from '$ui/Reset';
-   let value=1
+    let count=0
 
-    counter.subscribe((value) => {
-        console.log(value);
+    counter.subscribe((value)=>{
+        count = value
     });
+    counter.set(5)
 </script>
 
 
 <div>
-    <h1>The count is {counter}</h1>
+    <h1>The count is {count}</h1>
     <Increment />
     <Decrement />
     <Reset />
