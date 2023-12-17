@@ -5,5 +5,3 @@
 	import { route } from '$lib/i18n-routing';
 </script>
 
-<p class="bg-slate-500 text-red-200">{m._test()}</p>
-<p class="text-red-200 bg-slate-500">{m._test()}</p>

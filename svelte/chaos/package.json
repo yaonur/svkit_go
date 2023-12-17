@@ -55,6 +55,7 @@
     "clsx": "^2.0.0",
     "l2": "link:",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tippy.js": "^6.3.7"
   }
 }

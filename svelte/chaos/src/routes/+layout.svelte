@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.css'
+	import '../app.css';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
@@ -11,19 +11,22 @@
 
 	$: setLanguageTag(lang);
 	$: pathName = $page.url.pathname;
-	console.log('pathName layout', $page.url.pathname);
 	if (browser && ($page.url.pathname == '/' || !availableLanguageTags.includes(lang))) {
 		// console.log("path name wrong");
 		goto(`/en`);
 	}
 </script>
 
-{#each availableLanguageTags as lang, i}
-	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
-{/each}
-<div>
-	<a href={$page.params.lang + '/signup'}>Signup</a>
+<div class="h-screen">
+	<div class="flex gap-4">
+		{#each availableLanguageTags as lang, i}
+			<a href={route($page.url.pathname, lang)} hreflang={lang}>{lang}</a>
+		{/each}
+	</div>
+	<div class="flex gap-4 bg-slate-200">
+		<a class="rounded-xl bg-secondary-200 p-2" href={$page.params.lang + '/actions'}>Actions</a>
+	</div>
+	{#key lang}
+		<slot />
+	{/key}
 </div>
-{#key lang}
-	<slot />
-{/key}
