@@ -10,9 +10,9 @@
 	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
 
 	$: setLanguageTag(lang);
-	$: pathName = $page.url.pathname;
-	if (browser && ($page.url.pathname == '/' || !availableLanguageTags.includes(lang))) {
-		// console.log("path name wrong");
+	// if(browser) console.log($page.params.lang)
+	if (browser && ($page.url.pathname == '/' || !availableLanguageTags.includes($page.params.lang as AvailableLanguageTag))) {
+		console.log("path name wrong", $page.url.pathname);
 		goto(`/en`);
 	}
 </script>
@@ -24,7 +24,7 @@
 		{/each}
 	</div>
 	<div class="flex gap-4 bg-slate-200">
-		<a class="rounded-xl bg-secondary-200 p-2" href={$page.params.lang + '/actions'}>Actions</a>
+		<a class="rounded-xl bg-secondary-200 p-2" href={route('actions',lang)}>Actions</a>
 	</div>
 	{#key lang}
 		<slot />
