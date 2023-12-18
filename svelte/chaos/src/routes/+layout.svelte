@@ -25,6 +25,7 @@
 	</div>
 	<div class="flex gap-4 bg-slate-200">
 		<a class="rounded-xl bg-secondary-200 p-2" href={route('actions',lang)}>Actions</a>
+		<a class="rounded-xl bg-secondary-200 p-2" href={route('lihautanactions',lang)}>Lihautan Actions</a>
 	</div>
 	{#key lang}
 		<slot />
