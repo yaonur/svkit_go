@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { options } from './../../../../.svelte-kit/generated/server/internal.js';
 	import { animate, stagger } from 'motion';
 	import type { Action } from 'svelte/action';
-	// import { AnimationControls, AnimationOptions, ProgressFunction } from "";
 	import type { AnimationOptions, AnimationControls } from 'motion';
 	type Options = {
 		options: AnimationOptions;

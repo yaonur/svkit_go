@@ -1,11 +1,9 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import Actions from './Actions.svelte';
 	import Modal from './Modal.svelte';
 	import Motions from './Motions.svelte';
 	import Tooltip from './Tooltip.svelte';
 
-	export let data: PageData;
 	let pageSelector = 1;
 </script>
 
