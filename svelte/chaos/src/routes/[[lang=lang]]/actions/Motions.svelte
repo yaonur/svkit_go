@@ -1,18 +1,18 @@
 <script lang="ts">
+	import { options } from './../../../../.svelte-kit/generated/server/internal.js';
 	import { animate, stagger } from 'motion';
 	import type { Action } from 'svelte/action';
 	// import { AnimationControls, AnimationOptions, ProgressFunction } from "";
 	import type { AnimationOptions, AnimationControls } from 'motion';
+	type Options = {
+		options: AnimationOptions;
+		action: (animation: { animation: AnimationControls }) => void;
+	};
 	interface Attributes {
 		'on:finished'?: (event: CustomEvent) => void;
 	}
-	const text: Action<HTMLElement, any, Attributes> = (
-		element: HTMLElement,
-		{
-			options,
-			action
-		}: { options: AnimationOptions; action: (animation: { animation: AnimationControls }) => void }
-	) => {
+	type TextAction = Action<HTMLElement, Options, Attributes>;
+	const text: TextAction = (element: HTMLElement, { options, action }) => {
 		const letters = element.innerText.trim().split('');
 		element.innerHTML = '';
 		letters.forEach((letter) => {
